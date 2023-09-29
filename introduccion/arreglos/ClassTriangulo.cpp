@@ -7,6 +7,10 @@ using namespace std;
 
         char Triangulo::miarreglo[10][10];
 
+        Triangulo::Triangulo(){
+                
+        }
+
         void Triangulo::triangulo1(){
                 
             this->llenararreglo();
