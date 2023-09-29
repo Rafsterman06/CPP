@@ -10,6 +10,9 @@ class Tiangulo{
     void llenararreglo();
 
   public:
+
+    Triangulo();
+
     void triangulo1();
 
     void triangulo4();
