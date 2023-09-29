@@ -5,8 +5,6 @@
 #include"Triangulo.h";
 using namespace std;
 
-        char Triangulo::miarreglo[10][10];
-
         Triangulo::Triangulo(){
                 
                 this->set_m();
