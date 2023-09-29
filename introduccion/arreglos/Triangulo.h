@@ -6,7 +6,7 @@ class Triangulo{
 
   private:
 
-    int m,n;
+    int m;
 
     char caracter;
 
