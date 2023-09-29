@@ -9,6 +9,20 @@ using namespace std;
 
         Triangulo::Triangulo(){
                 
+                this->m=10;
+
+                this->n=10;
+
+                this->caracter='*';
+        }
+
+        Triangulo::Triangulo(int m, int n, char caracter){
+
+                this->m=m;
+
+                this->n=n;
+
+                this->caracter=caracter;
         }
 
         void Triangulo::triangulo1(){
