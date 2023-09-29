@@ -98,7 +98,7 @@ using namespace std;
             }
         }
 
-        void Triangulo::llenararreglo(){
+        void Triangulo::llenararreglo(char [][], int m, char){
                 
             for(int i=0;i<this->m;i++){
 
@@ -146,4 +146,22 @@ using namespace std;
             }
                 
             return ciclo;
-    }
+        }
+
+        void set_m(){
+                
+                int m;
+                
+                cout<<"Ingresa la longitud del arreglo"<<endl;
+                
+                if(m>0){
+                        
+                         this->m=m;       
+                }
+                else{
+                        
+                        cout<<"Ingresa un numero mayor a \'0\'"<<endl;
+                        
+                        this->set_m();
+                }
+        }
