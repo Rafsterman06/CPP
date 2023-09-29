@@ -2,7 +2,7 @@
 #include<string.h>
 using namespace std;
 
-class Tiangulo{
+class Triangulo{
 
   private:
     char miarrlego[10][10];
