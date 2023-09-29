@@ -9,27 +9,28 @@ using namespace std;
 
         Triangulo::Triangulo(){
                 
-                this->m=10;
+                this->set_m();
+                
+                this->set_caracter();
 
-                this->n=10;
-
-                this->caracter='*';
+                this->miarreglo[this->get_m][this->get_m];
+                
         }
 
-        Triangulo::Triangulo(int m, int n, char caracter){
+        Triangulo::Triangulo(int m, char caracter){
 
                 this->m=m;
 
-                this->n=n;
-
                 this->caracter=caracter;
+
+                this->miarreglo[this->get_m][this->get_m];
         }
 
         void Triangulo::triangulo1(){
                 
             this->llenararreglo();
                 
-            for(int i=0; i<10; i++){
+            for(int i=0; i<this->m; i++){
                     
                 for(int j=0; j<=i; j++){
                         
@@ -45,7 +46,7 @@ using namespace std;
                 
             this->llenararreglo();
                 
-            for(int i=0; i<10; i++){
+            for(int i=0; i<this->m; i++){
 
                 for(int j=0; j<i; j++){
 
@@ -53,9 +54,9 @@ using namespace std;
                 }
             }
 
-            for(int i=0;i<10;i++){
+            for(int i=0;i<this->m;i++){
                     
-                for(int j=0;j<10;j++){
+                for(int j=0;j<this->m;j++){
                         
                     cout<<this->miarreglo[i][j];
                 }
@@ -67,7 +68,7 @@ using namespace std;
                 
             this->llenararreglo();
                 
-            for(int i=9; i>=0; i--){
+            for(int i=this->m-1; i>=0; i--){
                     
                 for(int j=0; j<=i; j++){
                         
@@ -81,17 +82,17 @@ using namespace std;
                 
             this->llenararreglo();
                 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < this->m; i++) {
                     
-                for (int j = 0; j < 10 - i - 1; j++) {
+                for (int j = 0; j < this->m - i - 1; j++) {
                         
                     this->miarreglo[i][j] = ' ';
                 }
             }
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < this->m; i++) {
                     
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < this->m; j++) {
                         
                     cout << this->miarreglo[i][j];
                 }
@@ -101,9 +102,9 @@ using namespace std;
 
         void Triangulo::llenararreglo(){
                 
-            for(int i=0;i<10;i++){
+            for(int i=0;i<this->m;i++){
 
-                for(int j=0;j<10;j++){
+                for(int j=0;j<this->m;j++){
 
                     this->miarreglo[i][j]='*';
                 }
