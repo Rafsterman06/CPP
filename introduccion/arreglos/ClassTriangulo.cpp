@@ -2,26 +2,49 @@
 #include<string>
 #include<stdio.h>
 #include<stdlib.h>
+#include"Triangulo.h";
 using namespace std;
 
-class Triangulo{
-    public:
+        Triangulo::Triangulo(){
+                
+                this->set_m();
+                
+                this->set_caracter();
 
-        char miarreglo[10][10];
+                this->miarreglo[this->get_m][this->get_m];
+                
+        }
 
-        void triangulo1(){
-            llenararreglo();
-            for(int i=0; i<10; i++){
+        Triangulo::Triangulo(int m, char caracter){
+
+                this->m=m;
+
+                this->caracter=caracter;
+
+                this->miarreglo[this->get_m][this->get_m];
+        }
+
+        void Triangulo::triangulo1(){
+                
+            this->llenararreglo();
+                
+            for(int i=0; i<this->m; i++){
+                    
                 for(int j=0; j<=i; j++){
+                        
                     cout<<this->miarreglo[i][j];
                 }
+                    
                 cout<<endl;
+                    
             }
         }
 
-        void triangulo4(){
-            llenararreglo();
-            for(int i=0; i<10; i++){
+        void Triangulo::triangulo4(){
+                
+            this->llenararreglo();
+                
+            for(int i=0; i<this->m; i++){
 
                 for(int j=0; j<i; j++){
 
@@ -29,73 +52,116 @@ class Triangulo{
                 }
             }
 
-            for(int i=0;i<10;i++){
-                for(int j=0;j<10;j++){
+            for(int i=0;i<this->m;i++){
+                    
+                for(int j=0;j<this->m;j++){
+                        
                     cout<<this->miarreglo[i][j];
-
                 }
                 cout<<""<<endl;
             }
         }
 
-        void triangulo2(){
-            llenararreglo();
-            for(int i=9; i>=0; i--){
+        void Triangulo::triangulo2(){
+                
+            this->llenararreglo();
+                
+            for(int i=this->m-1; i>=0; i--){
+                    
                 for(int j=0; j<=i; j++){
+                        
                     cout<<this->miarreglo[i][j];
                 }
                 cout<<endl;
             }
         }
 
-        void triangulo3(){
+        void Triangulo::triangulo3(){
+                
             this->llenararreglo();
-            for (int i = 0; i < 10; i++) {
-                for (int j = 0; j < 10 - i - 1; j++) {
+                
+            for (int i = 0; i < this->m; i++) {
+                    
+                for (int j = 0; j < this->m - i - 1; j++) {
+                        
                     this->miarreglo[i][j] = ' ';
                 }
             }
 
-            for (int i = 0; i < 10; i++) {
-                for (int j = 0; j < 10; j++) {
+            for (int i = 0; i < this->m; i++) {
+                    
+                for (int j = 0; j < this->m; j++) {
+                        
                     cout << this->miarreglo[i][j];
                 }
                 cout << endl;
             }
         }
 
-        void llenararreglo(){
-            for(int i=0;i<10;i++){
+        void Triangulo::llenararreglo(char [][], int m, char){
+                
+            for(int i=0;i<this->m;i++){
 
-                for(int j=0;j<10;j++){
+                for(int j=0;j<this->m;j++){
 
                     this->miarreglo[i][j]='*';
                 }
             }
         }
     
-        int opc(){
+        int Triangulo::opc(){
+                
             int opc=0;
+                
             cout<<"Ingresa una opcion \n1 triangulo 1\n2 triangulo 2\n3 triangulo 3\n4 triangulo 4\notro default\n";
+                
             cin>>opc;
+                
             return opc;
         }
-        bool preguntar(){
+
+        bool Triangulo::preguntar(){
+                
             char opc2=' ';
+                
             bool ciclo=true;
+                
             cout<<"Deseas continuar? S/N"<<endl;
+                
             cin>>opc2;
+                
             if(opc2=='S' || opc2=='s'){
+                    
                 ciclo=true;
             }
             else if(opc2=='N' || opc2=='n'){
+                    
                 ciclo=false;
             }
             else{
+                    
                 cout<<"Ingresa una opcion valida"<<endl;
-                preguntar();
+                    
+                this->preguntar();
             }
+                
             return ciclo;
-    }
+        }
 
-};
+        void set_m(){
+                
+                int m;
+                
+                cout<<"Ingresa la longitud del arreglo"<<endl;
+                
+                if(m>0){
+                        
+                         this->m=m;       
+                }
+                else{
+                        
+                        cout<<"Ingresa un numero mayor a \'0\'"<<endl;
+                        
+                        this->set_m();
+                }
+        }
