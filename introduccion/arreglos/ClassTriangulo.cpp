@@ -130,5 +130,3 @@ using namespace std;
                 
             return ciclo;
     }
-
-};
