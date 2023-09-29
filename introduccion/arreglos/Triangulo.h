@@ -34,13 +34,11 @@ class Triangulo{
 
     void set_m();
 
-    void set_n();
-
     void set_caracter();
 
     int get_m();
 
-    int get_n();
-
     char get_caracter();
+
+    int inputnum();
 };
