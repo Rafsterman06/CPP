@@ -4,33 +4,29 @@ using namespace std;
 
 class Triangulo{
 
-  private:
-
-    int m;
+  protected:
 
     char caracter;
 
-    char miarrlego[][];
+    int m;
+    void llenararreglo(int, char );
 
-    void llenararreglo(char [][], int ,int ,char );
+    char miarreglo[100][100];
+
+    int opc;
+
 
   public:
 
     Triangulo();
 
-    Triangulo(int ,int , char);
-
     void triangulo1();
-
-    void triangulo4();
 
     void triangulo2();
 
     void triangulo3();
-    
-    int opc();
 
-    bool preguntar();
+    void triangulo4();
 
     void set_m();
 
@@ -40,5 +36,9 @@ class Triangulo{
 
     char get_caracter();
 
-    int inputnum();
+  bool preguntar();
+
+  int get_opc();
+
+  void set_opc();
 };

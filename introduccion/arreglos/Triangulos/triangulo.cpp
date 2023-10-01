@@ -6,48 +6,51 @@
 using namespace std;
 int main(){
 
-    Triangulo * triangulo=new Triangulo();
+    Triangulo triangulo;
     
     bool ciclo=true;
     
     while(ciclo){
         
-        switch(triangulo->opc()){
+        triangulo.set_opc();
+        triangulo.set_m();
+        triangulo.set_caracter();
+        switch(triangulo.get_opc()){
             
         case 1:
-            triangulo->triangulo1();
+            triangulo.triangulo1();
         break;
             
         case 2:
-            triangulo->triangulo2();
+            triangulo.triangulo2();
         break;
             
         case 3:
-            triangulo->triangulo3();
+            triangulo.triangulo3();
         break;
             
         case 4:
-            triangulo->triangulo4();
+            triangulo.triangulo4();
         break;
-            
+
         default:
             
-            triangulo->triangulo1();
+            triangulo.triangulo1();
             cout<<endl;
             
-            triangulo->triangulo2();
+            triangulo.triangulo2();
             cout<<endl;
             
-            triangulo->triangulo3();
+            triangulo.triangulo3();
             cout<<endl;
             
-            triangulo->triangulo4();
+            triangulo.triangulo4();
             cout<<endl;
         }
         
-        ciclo=triangulo->preguntar();
+        ciclo=triangulo.preguntar();
         
-        cout<<"GOODBYE"<<endl;
     }
+        cout<<"GOODBYE"<<endl;
     return 0;
 }
