@@ -21,9 +21,28 @@ public:
 };
 class Humano: public Ser_Vivo{
     private:
-    std::string apellido;
+        std::string apellido;
     public:
-    Humano();
+        Humano();
+        Humano(std::string,int,std::string);
 
-    void gastar_a_lo_pendejo();
+        void gastar_a_lo_pendejo();
+        std::string get_apellido();
+
+        void set_apellido();
+
+        void comer();
 };
+
+class Perro: public Ser_Vivo{
+    private:
+    
+        std::string duenio;
+    public:
+        Perro();
+        Perro(std::string, int,std::string);
+        void comer();
+};
+
+
+
