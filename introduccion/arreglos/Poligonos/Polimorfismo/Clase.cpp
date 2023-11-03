@@ -3,27 +3,19 @@
 
 using namespace std;
 
-Ser_Vivo :: Ser_Vivo(){
-
-}
+Ser_Vivo :: Ser_Vivo(){}
 Ser_Vivo :: Ser_Vivo(string nombre, int edad){
     this->edad=edad;
     this->nombre=nombre;
 }
-string Ser_Vivo :: get_nombre(){
-
-        return this->nombre;
-    }
+string Ser_Vivo :: get_nombre(){return this->nombre;}
 
 void Ser_Vivo :: set_nombre(){
         cout<<"Ingresa un nombre"<<endl;
         cin>>this->nombre;
     }
 
-int Ser_Vivo :: get_edad(){
-
-        return this->edad;
-    }
+int Ser_Vivo :: get_edad(){return this->edad;}
 
 void Ser_Vivo :: set_edad(){
         cout<<"Ingresa la edad"<<endl;
@@ -41,9 +33,7 @@ void Humano::gastar_a_lo_pendejo(){
     cout<<"Gastando a lo pendejo"<<endl;
 }
 
-string Humano :: get_apellido(){
-    return this->apellido;
-}
+string Humano :: get_apellido(){return this->apellido;}
 
 void Humano :: comer(){
 

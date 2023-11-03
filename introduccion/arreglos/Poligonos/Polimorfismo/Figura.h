@@ -44,6 +44,6 @@ class Cuadrado: public Figura{
         Cuadrado(std::string, int, double);
         Cuadrado(std::string, int, double, double);
         
-        void perimetro();
-        void area();
+        void Perimetro();
+        void Area();
 };
