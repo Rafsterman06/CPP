@@ -11,10 +11,13 @@ int main(){
     Problema3* Obj_sumar_no_diagonal=new Problema3();
     Problema4* Obj_triangulo_de_pascal=new Problema4();
     Problema5 Obj_random;
+    Problema6 Problema6;
 
     int num;
+    string tttt="";
     int opc=0;
     bool bucle=true;
+    char holaa[150];
     while (bucle){
         cout<<"1) Problema 1"<<endl<<"2) Problema 2"<<endl<<"3) Problema 3"<<endl<<"4) Problema 4"<<endl<<"5) Problema 5"<<endl<<"6) Problema 6"<<endl<<"7) Todo Junto"<<endl<<"8) Salir"<<endl;
         cin>>opc;
@@ -53,9 +56,19 @@ int main(){
                 Obj_random.ordenar_arreglo();
                 cout<<"======================================="<<endl;
                 Obj_random.leer_arreglo();
+                system("pause");
         break;
         case 6:
-            system("random.exe");
+            //system("random.exe");
+            cout<<"Ingresa una frase"<<endl;
+            cin.ignore(100000,'\n');
+            cin.getline(holaa,150);
+            Problema6.set_frase(holaa);
+            Problema6.evaluarcadena();
+            Problema6.reemplazar_vocales();
+            cout<<Problema6.get_frace()<<endl;
+            system("pause");
+
         break;
         case 7:
             //===========================================================================================================================================
@@ -118,6 +131,15 @@ int main(){
 
             //===========================================================================================================================================
 
+                cout<<"Ingresa una frase"<<endl;
+                cin.ignore(100000,'\n');
+                cin.getline(holaa,150);
+                Problema6.set_frase(holaa);
+                Problema6.evaluarcadena();
+                Problema6.reemplazar_vocales();
+                cout<<Problema6.get_frace()<<endl;
+                system("pause");
+
         break;
         case 8:
             bucle=false;
@@ -125,12 +147,10 @@ int main(){
         
         default:
             cout<<"Opcion no valida"<<endl;
+            opc=0;
             break;
         }
     }
-    
-
-
 
 
 Obj_calcular_cambio->~Problema1();
@@ -138,8 +158,7 @@ Obj_leer_imprimir_arreglo->~Problema2();
 Obj_sumar_no_diagonal->~Problema3();
 Obj_triangulo_de_pascal->~Problema4();
 Obj_random.~Problema5();
+Problema6.~Problema6();
 
-
-    system("pause");
     return 0;
 }

@@ -1,6 +1,7 @@
 #include<iostream>
 #include"Arreglo.h"
 #include<time.h>
+#include<cstdlib>
 using namespace std;
 
 //Destructor de la clase Problema1
@@ -156,14 +157,108 @@ Problema6::~Problema6(){}
 
 Problema6::Problema6(){}
 
-Problema6::Problema6(string micadena){this->micadena=micadena;}
+void Problema6::set_frase(char hola[]){
+        for (size_t i = 0; i < 150; i++){
+            this->frace[i]=hola[i];
+        }
+    }
 
-void Problema6::set_micadena(string micadena){this->micadena=micadena;}
+std::string Problema6::get_frace(){return this->frace;}
 
-std::string Problema6::get_mecadena(){return this->micadena;
+void Problema6::evaluarcadena(){
+    // Este for recorre la frase y cuenta las letras, las almecena en el arreglo contador
+        for (size_t i = 0; i < sizeof(this->frace); i++){
+            char Exprecion=this->frace[i];
+
+            switch (Exprecion){
+                case 'a':
+                    this->Aa[this->contador_vocales[0]]=i;
+                    this->contador_vocales[0]=this->contador_vocales[0]+1;
+                    this->contador[0]=this->contador[0]+1;
+                break;
+                case 'b':this->contador[1]+=1;break;
+                case 'c':this->contador[2]+=1;break;
+                case 'd':this->contador[3]+=1;break;
+                case 'e':
+                    this->Ee[this->contador_vocales[1]]=i;
+                    this->contador_vocales[1]=this->contador_vocales[1]+1;
+                    this->contador[4]=this->contador[4]+1;
+                break;
+                case 'f':this->contador[5]+=1;break;
+                case 'g':this->contador[6]+=1;break;
+                case 'h':this->contador[7]+=1;break;
+                case 'i':
+                    this->Ii[this->contador_vocales[2]]=i;
+                    this->contador_vocales[2]=this->contador_vocales[2]+1;
+                    this->contador[8]=this->contador[8]+1;
+                break;
+                case 'j':this->contador[9]+=1;break;
+                case 'k':this->contador[10]+=1;break;
+                case 'l':this->contador[11]+=1;break;
+                case 'm':this->contador[12]+=1;break;
+                case 'n':this->contador[13]+=1;break;
+                case 'o':
+                    this->Oo[this->contador_vocales[3]]=i;
+                    this->contador_vocales[3]=this->contador_vocales[3]+1;
+                    this->contador[14]=this->contador[14]+1;
+                break;
+                case 'p':this->contador[15]+=1;break;
+                case 'q':this->contador[16]+=1;break;
+                case 'r':this->contador[17]+=1;break;
+                case 's':this->contador[18]+=1;break;
+                case 't':this->contador[19]+=1;break;
+                case 'u':
+                    this->Uu[this->contador_vocales[4]]=i;
+                    this->contador_vocales[4]=this->contador_vocales[4]+1;
+                    this->contador[20]=this->contador[20]+1;
+                break;
+                case 'v':this->contador[21]+=1;break;
+                case 'w':this->contador[22]+=1;break;
+                case 'x':this->contador[23]+=1;break;
+                case 'y':this->contador[24]+=1;break;
+                case 'z':this->contador[25]+=1;break;
+
+                default:
+                break;
+            }
+        }    
+    // Recorre y compara las cantidades para sacar el caracter mas usado
+        for (size_t i = 0; i < sizeof(this->contador)/4; i++){
+            if(this->contador[i]>this->caracter_mas_usado){
+                this->caracter_mas_usado=this->contador[i];
+                this->ccaracter_mas_usado=i;
+            }
+            
+        }
 }
 
-void Problema6::evaluarcadena(string micadena){
-    
-    
+void Problema6::reemplazar_vocales(){
+        for (size_t i = 0; i < sizeof(this->Aa)/4; i++){
+        if(this->Aa[i]>0){
+            this->frace[this->Aa[i]]=this->abecedario[this->ccaracter_mas_usado];
+        }
+    }
+    for (size_t i = 0; i < sizeof(this->Ee)/4; i++){
+        if(this->Ee[i]>0){
+            
+            this->frace[this->Ee[i]]=this->abecedario[this->ccaracter_mas_usado];
+        }
+    }
+    for (size_t i = 0; i < sizeof(this->Ii)/4; i++){
+        if(this->Ii[i]>0){
+            
+            this->frace[this->Ii[i]]=this->abecedario[this->ccaracter_mas_usado];
+        }
+    }
+    for (size_t i = 0; i < sizeof(this->Oo)/4; i++){
+        if(this->Oo[i]>0){
+            this->frace[this->Oo[i]]=this->abecedario[this->ccaracter_mas_usado];
+        }
+    }
+    for (size_t i = 0; i < sizeof(this->Uu)/4; i++){
+        if(this->Uu[i]>0){
+            this->frace[this->Uu[i]]=this->abecedario[this->ccaracter_mas_usado];
+        }
+    }
+
 }

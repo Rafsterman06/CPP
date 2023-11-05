@@ -131,8 +131,18 @@ class Problema6{
 
     private:
     
-        std::string micadena;
-    
+        
+    protected:
+        char frace[150]={' '};
+        char abecedario[27]={"abcdefghijklmnopqrstuvwxyz"}; //Se usa como diccionario de referencia para el switch
+        int caracter_mas_usado=0;
+        int ccaracter_mas_usado=0;
+        int Aa[150]={0}, Ee[150]={0}, Ii[150]={0}, Oo[150]={0}, Uu[150]={0}; //Ubicacion de las vocales
+//Contadores
+        int contador[26]={0}; //Cuenta las letras y las almacena en una ubicacion que pretende estar vinculado al abecedario
+        int contador_vocales[5]={0}; //itera para almecenar las ubicaciones
+
+
     public:
 
 //Destructor
@@ -140,12 +150,12 @@ class Problema6{
 
 //Constructores
         Problema6(); //Constructor vacio
-        Problema6(std::string); //Constructor que recibe como argumento una cadena de caracteres
 
-//Metodos get y set de micadena
-        void set_micadena(std::string);
-        std::string get_mecadena();
+//Metodos get y set de frade
+        void set_frase(char []);
+        std::string get_frace();
 
 //Metodos
-        void evaluarcadena(std::string);
+        void evaluarcadena();
+        void reemplazar_vocales();
 };
